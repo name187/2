@@ -12,6 +12,22 @@
       margin: 0;
       padding: 20px;
     }
+    form {
+      margin-bottom: 30px;
+    }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 20px;
+      width: 100%;
+      border-radius: 4px;
+      border: none;
+      background-color: #111;
+      color: #0af;
+      box-sizing: border-box;
+    }
+    input::placeholder {
+      color: #666;
+    }
     ul {
       list-style: none;
       padding: 0;
@@ -32,25 +48,14 @@
       background: #222;
       text-decoration: underline;
     }
-    form {
-      margin-top: 30px;
-    }
-    input[type="text"] {
-      padding: 10px;
-      font-size: 20px;
-      width: 100%;
-      border-radius: 4px;
-      border: none;
-      background-color: #111;
-      color: #0af;
-      box-sizing: border-box;
-    }
-    input::placeholder {
-      color: #666;
-    }
   </style>
 </head>
 <body>
+
+  <!-- ページ最上部の検索フォーム（スクリプトなし） -->
+  <form action="https://search.yahoo.co.jp/search" method="get">
+    <input type="text" name="p" placeholder="検索">
+  </form>
 
   <ul>
     <li><a href="https://www.yahoo.co.jp/">yahoo</a></li>
@@ -62,17 +67,6 @@
     <li><a href="https://www.pixiv.net/">pixiv</a></li>
     <li><a href="https://hayabusa.open2ch.net/livejupiter/">hayabusa.open2ch</a></li>
   </ul>
-
-  <!-- ページ最下部のYahoo!検索フォーム（初期フォーカスあり） -->
-  <form action="https://search.yahoo.co.jp/search" method="get">
-    <input type="text" name="p" id="searchBox" placeholder="検索">
-  </form>
-
-  <script>
-    window.onload = function() {
-      document.getElementById("searchBox").focus();
-    };
-  </script>
 
 </body>
 </html>
