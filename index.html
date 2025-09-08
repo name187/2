@@ -63,10 +63,16 @@
     <li><a href="https://hayabusa.open2ch.net/livejupiter/">hayabusa.open2ch</a></li>
   </ul>
 
-  <!-- ページ最下部のYahoo!検索フォーム（プレースホルダー「検索」表示） -->
+  <!-- ページ最下部のYahoo!検索フォーム（初期フォーカスあり） -->
   <form action="https://search.yahoo.co.jp/search" method="get">
-    <input type="text" name="p" placeholder="検索">
+    <input type="text" name="p" id="searchBox" placeholder="検索">
   </form>
+
+  <script>
+    window.onload = function() {
+      document.getElementById("searchBox").focus();
+    };
+  </script>
 
 </body>
 </html>
