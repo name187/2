@@ -67,5 +67,19 @@
     <input type="text" name="p" id="searchBox" placeholder="検索">
   </form>
 
+  <script>
+    (function() {
+      'use strict';
+      const tryFocus = () => {
+        const searchBox = document.getElementById('searchBox');
+        if (searchBox) {
+          searchBox.focus();
+        } else {
+          requestAnimationFrame(tryFocus);
+        }
+      };
+      requestAnimationFrame(tryFocus);
+    })();
+  </script>
 </body>
 </html>
