@@ -67,6 +67,10 @@
     <input type="text" name="p" id="searchBox" placeholder="検索">
   </form>
 
+  <form onsubmit="goToURL(); return false;">
+    <input type="text" id="urlInput" placeholder="URL">
+  </form>
+
   <script>
     (function() {
       'use strict';
@@ -80,6 +84,14 @@
       };
       requestAnimationFrame(tryFocus);
     })();
+
+  function goToURL() {
+    const url = document.getElementById("urlInput").value;
+    if (url) {
+      const fullURL = url.startsWith("http") ? url : "https://" + url;
+      window.location.href = fullURL;
+    }
+  }
   </script>
 </body>
 </html>
