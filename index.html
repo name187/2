@@ -85,23 +85,9 @@
       };
       requestAnimationFrame(tryFocus);
     })();
-<script>
-  (function() {
-    'use strict';
-    const tryFocus = () => {
-      const searchBox = document.getElementById('searchBox');
-      if (searchBox) {
-        searchBox.focus();
-      } else {
-        requestAnimationFrame(tryFocus);
-      }
-    };
-    requestAnimationFrame(tryFocus);
-  })();
 
   function goToURL() {
     const url = document.getElementById("urlInput").value;
-    const url = document.getElementById("urlInput").value.trim();
     if (url) {
       const fullURL = url.startsWith("http") ? url : "https://" + url;
       window.location.href = fullURL;
@@ -109,14 +95,5 @@
   }
     
   </script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const urlInput = document.getElementById("urlInput");
-    urlInput.addEventListener("input", () => {
-      if (urlInput.value.trim() !== "") {
-        goToURL();
-      }
-    });
-  });
-</script>
 </body>
 </html>
