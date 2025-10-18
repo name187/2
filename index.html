@@ -67,9 +67,9 @@
     <input type="text" name="p" id="searchBox" placeholder="検索">
   </form>
 
-<form id="urlForm" onsubmit="return false;">
-  <input type="text" id="urlInput" placeholder="URL">
-</form>
+  <form id="urlForm" onsubmit="return false;">
+    <input type="text" id="urlInput" placeholder="URL">
+  </form>
 
 <script>
   function goToURL(value) {
@@ -79,10 +79,10 @@
     }
   }
 
-  document.getElementById("urlInput").addEventListener("input", function() {
-    goToURL(this.value.trim());
-  });
+  window.onload = function() {
+    document.getElementById("searchBox").focus();
+  };
 </script>
-  
+
 </body>
 </html>
