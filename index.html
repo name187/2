@@ -67,33 +67,22 @@
     <input type="text" name="p" id="searchBox" placeholder="検索">
   </form>
 
-  <form onsubmit="goToURL(); return false;">
-    <input type="text" id="urlInput" placeholder="URL">
-  </form>
+<form id="urlForm" onsubmit="return false;">
+  <input type="text" id="urlInput" placeholder="URL">
+</form>
 
-  <script>
-    
-    (function() {
-      'use strict';
-      const tryFocus = () => {
-        const searchBox = document.getElementById('searchBox');
-        if (searchBox) {
-          searchBox.focus();
-        } else {
-          requestAnimationFrame(tryFocus);
-        }
-      };
-      requestAnimationFrame(tryFocus);
-    })();
-
-  function goToURL() {
-    const url = document.getElementById("urlInput").value;
-    if (url) {
-      const fullURL = url.startsWith("http") ? url : "https://" + url;
+<script>
+  function goToURL(value) {
+    if (value) {
+      const fullURL = value.startsWith("http") ? value : "https://" + value;
       window.location.href = fullURL;
     }
   }
-    
-  </script>
+
+  document.getElementById("urlInput").addEventListener("input", function() {
+    goToURL(this.value.trim());
+  });
+</script>
+  
 </body>
 </html>
