@@ -81,7 +81,7 @@
   (function() {
     'use strict';
     const tryFocus = () => {
-      const searchBox = document.getElementById('searchBox');
+      const searchBox = document.getElementById('SearchBox_1');
       if (searchBox) {
         searchBox.focus();
       } else {
@@ -90,6 +90,7 @@
     };
     requestAnimationFrame(tryFocus);
   })();
+  
   function goToURL() {
     const url = document.getElementById("urlInput").value.trim();
     if (url) {
