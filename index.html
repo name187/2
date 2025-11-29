@@ -62,19 +62,19 @@
   </ul>
   
   <form action="https://search.yahoo.co.jp/search" method="get">
-    <input type="text" name="p" id="SearchBox_1" placeholder="yahoo">
+    <input type="text" name="p" id="SearchBox_yahoo" placeholder="yahoo">
+  </form>
+
+    <form action="https://search.yahoo.co.jp/realtime/search" method="get">
+    <input type="text" name="p" id="SearchBox_yahoo_twitter" placeholder="yahoo_twitter">
   </form>
 
   <form action="https://www.youtube.com/results" method="get">
-    <input type="text" name="search_query" id="SearchBox_2" placeholder="youtube">
+    <input type="text" name="search_query" id="SearchBox_youtube" placeholder="youtube">
   </form>
 
   <form action="https://x.com/search" method="get">
-    <input type="text" name="q" id="SearchBox_3" placeholder="twitter">
-  </form>
-
-  <form action="https://search.yahoo.co.jp/realtime/search" method="get">
-    <input type="text" name="p" id="SearchBox_4" placeholder="Yahoo_twitter">
+    <input type="text" name="q" id="SearchBox_twitter" placeholder="twitter">
   </form>
   
   <form onsubmit="goToURL(); return false;">
@@ -85,7 +85,7 @@
   (function() {
     'use strict';
     const tryFocus = () => {
-      const searchBox = document.getElementById('SearchBox_1');
+      const searchBox = document.getElementById('SearchBox_yahoo');
       if (searchBox) {
         searchBox.focus();
       } else {
